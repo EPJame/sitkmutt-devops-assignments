@@ -10,8 +10,8 @@ services:
       MONGO_DB_USERNAME: ratings
       MONGO_DB_PASSWORD: CHANGEME
   details:
-    build: ./details
-    image: ghcr.io/pipe34150/bookinfo-details:dev
+    build: ./sitkmutt-bookinfo-details
+    image: ghcr.io/epjame/bookinfo-details:dev
     ports:
       - "8081:8081"
     environment:
@@ -28,15 +28,15 @@ services:
       MONGODB_PASSWORD: CHANGEME
       MONGODB_DATABASE: ratings
   reviews:
-    build: ./reviews
-    image: ghcr.io/pipe34150/bookinfo-reviews:dev
+    build: ./sitkmutt-bookinfo-reviews
+    image: ghcr.io/epjame/bookinfo-reviews:dev
     ports:
       - "8082:9080"
     environment:
       RATINGS_SERVICE: http://ratings:8080
   productpage:
-    build: ./productpage
-    image: ghcr.io/pipe34150/bookinfo-productpage:dev
+    build: ./sitkmutt-bookinfo-productpage
+    image: ghcr.io/epjame/bookinfo-productpage:dev
     ports:
       - "8083:8083"
     environment:
