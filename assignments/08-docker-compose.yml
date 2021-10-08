@@ -1,7 +1,7 @@
 services:
   ratings:
     build: ./ratings
-    image: ghcr.io/pipe34150/bookinfo-ratings:dev
+    image: ghcr.io/epjame/bookinfo-ratings:dev
     ports:
       - "8080:8080"
     environment:
@@ -15,8 +15,8 @@ services:
     ports:
       - "8081:8081"
     environment:
-      ENABLE_EXTERNAL_BOOK_SERVICE: true
-      DO_NOT_ENCRYPT: false
+      ENABLE_EXTERNAL_BOOK_SERVICE: "true"
+      DO_NOT_ENCRYPT: "false"
   mongodb:
     image: bitnami/mongodb:5.0.2-debian-10-r2
     volumes:
@@ -43,4 +43,4 @@ services:
       RATINGS_HOSTNAME: http://ratings:8080
       DETAILS_HOSTNAME: http://details:8081
       REVIEWS_HOSTNAME: http://reviews:9080
-      FLOOD_FACTOR: 0
+      FLOOD_FACTOR: "0"
